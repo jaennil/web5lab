@@ -5,4 +5,14 @@ define('DB_USER', 'jaennil');
 define('DB_PASSWORD', 'naeNN6457!');
 define('DB_NAME', 'web5');
 $mysql = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME, DB_PORT);
+
+if ($mysql->connect_errno) {
+    printf("failed to connect to database");
+    exit();
+}
+
+if (!$mysql->ping()) {
+    printf ("failed to connect to database");
+    die();
+}
 ?>
